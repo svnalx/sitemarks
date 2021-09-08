@@ -1,0 +1,91 @@
+============================================================
+GROUP TREE 1
+============================================================
+SELECT w.w_title
+FROM
+groups AS node,
+groups AS parent
+JOIN junction AS j ON j.j_g_id = parent.g_id
+JOIN webmarks AS w ON w.w_id = j.j_w_id
+WHERE node.g_left BETWEEN parent.g_left AND parent.g_right
+AND node.g_id = '30'
+ORDER BY node.g_name;
+
+============================================================
+GET WEBMARKS pseudo code
+============================================================
+SELECT gids of children's left value within parent's left/right
+Save child gids to array
+Search joined tables WHERE node.g_id IN (array)
+
+============================================================
+GET GROUP LEFT AND RIGHT VALUES
+============================================================
+select
+	g.g_left,
+	g.g_right
+from
+	groups as g
+where
+	g.g_id = ?;
+
+
+============================================================
+SELECT SUBGROUP IDS
+============================================================
+select
+	g.g_id
+from
+	groups as g
+where
+	g.g_left between ? and ?;
+	
+============================================================
+GET WEBMARKS
+============================================================
+select
+	w.w_title,
+	g.g_name
+from 
+	junction as j
+	join 
+    	webmarks as w on w.w_id = j.j_w_id 
+    join 
+    	groups as g on g.g_id = j.j_g_id
+    and 
+    	j.j_g_id IN('31')
+
+============================================================
+GROUP TREE 2 pseduo
+============================================================
+
+Get first level of parents, save to array
+  Get lowest g_left value, save to variable lPos
+  Get group name where = @leftPos + 1, save to array
+  Get row, save g_right value to @rPos
+  Get group name where g_left = @rPos + 1, save to array
+  Repeat until done
+
+for each parent, recursively display children and grandchildren, etc...
+
+============================================================
+FIND UNGROUPED WEBMARKS
+============================================================
+select 
+	w.w_id,
+	w.w_title,
+	j.j_id,
+	g.g_id,
+	g.g_name
+from 
+	webmarks as w
+left join 
+	junction as j on j.j_w_id = w.w_id
+left join 
+	groups as g on g.g_id = j.j_g_id
+order by 
+	w.w_id
+	
+
+
+

@@ -1,0 +1,58 @@
+function build_tree(gt_array)
+{
+l_pos = 1
+
+foreach gt_array as group
+  
+  if group[left] == l_pos
+    <ol><li>group name
+    l_pos++
+
+  l_pos = get_node(gt_array, l_pos)
+ 
+close html tags
+}
+
+
+====================================================
+WORKING FUNCTION
+====================================================
+
+    public function build_tree($gt_array, &$url_info, $position = 2)
+    {        
+        $output = "<ol><li>";
+        
+        foreach ($gt_array as $group)
+        {
+            if 
+            (
+                $group['g_left'] == $position
+            )
+            {
+                $node_left = $group['g_left'];
+                $node_right = $group['g_right'];
+                
+                
+                $output .= <<< ENDOUTPUT
+                <ol><li>
+                <label
+                for="{$group['g_id']}">
+                    <a {$url_info['if_active']} href="{$url_info['url']}">{$group['g_name']}</a>
+                </label>
+
+                <input
+                type="checkbox"
+                id="{$group['g_id']}" />
+                </li>
+ENDOUTPUT;
+                $output .= $this->Browse_model->build_tree($gt_array, $url_info, $position + 1);
+                $output .= "</li></ol>";
+                
+                
+                $position = $node_right + 1;
+            }
+        }
+        
+        $output .= "</li></ol>";
+        
+        return $output;

@@ -1,0 +1,49 @@
+﻿Webmarks - An Alex Project
+=========================
+Possible names:
+Webmarks
+Collector's Webbase
+Weblinks Collector
+
+Synpopsis
+-------------------------
+Stores bookmarks in MySQL database.
+Organize in front-end by tree structure
+
+
+Acceptance Criteria
+-------------------------
+- Graph database
+- Login/logout
+✔ Make new groups
+  - Right click menu
+  - Edit/delete groups
+✔ Add bookmarks to group
+  - Able to "star" a bookmark as important
+  - Edit/delete bookmarks
+  - Must confirm on delete
+- Filter results by group
+✔ Display results in a table
+  - Sort by date added, or alphabetical title/summary/notes (like Fiery log)
+  - Sticky favorites wtihin group result view
+✔ Randomly suggest a bookmark to re-visit
+- Search bookmarks
+- Create custom batch files for launching websites / or create a quick launch link (of multiple urls) on website
+
+
+
+Flow
+-------------------------
+
+Groups:
+  Add group
+    Name
+  Add a bookmark
+    Title
+    URL
+    Short description/summary
+    Notes
+
+Display results:
+  in a table
+  Group - Star - Title - Summary - Notes - Edit - Delete
