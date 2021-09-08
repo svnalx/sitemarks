@@ -1,7 +1,8 @@
 <img src="/images/logos/logo-full.png">
-<p>By Alex Crist</p>
+<span style="font-style:italic;">By Alex Crist</span>
 
-Mark websites for later. Keep them organized with a familiar directory and table view.
+<p><strong>Bookmarks are for books.</strong></p>
+<p>With SiteMarks, keep your links organized with a familiar tree directory and table view.</p>
 
 ## Tech Stack
 
