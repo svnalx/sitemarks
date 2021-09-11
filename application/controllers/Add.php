@@ -7,9 +7,9 @@ class Add extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
+        $this->load->helper('url_helper');
         $this->load->model('Add_model');
         $this->load->model('Tree_model');
-        $this->load->helper('url_helper');
         $this->load->library('session');
         $this->session->set_userdata('mode', 'add');        
     }

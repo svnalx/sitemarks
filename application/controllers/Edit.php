@@ -6,10 +6,9 @@ class Edit extends CI_Controller {
 
 	public function __construct()
     {
-        parent::__construct();
-        $this->load->model('Edit_model');
+        parent::__construct(); 
         $this->load->helper('url_helper');
-        
+        $this->load->model('Edit_model');
     }
 
     public function index()

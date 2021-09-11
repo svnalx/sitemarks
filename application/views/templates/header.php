@@ -2,25 +2,25 @@
 include ($_SERVER['DOCUMENT_ROOT'] . '/sitemarks/vars.php'); 
 ?>
 
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8"  />
-    <meta name="author" content="Alex Crist">
-	<meta name="keywords" content="bookmarks, organization">
-	<meta name="description" content="Mark websites for later. Keep them organized with a familiar directory and table view.">
-	<meta name="robots" content="all">
-	<meta name="copyright" content="Alex Crist">
-    <link 
-    rel="shortcut icon" 
-    href="<?php echo $GLOBALS['site'] . "/images/favicon.png";?>" />
-    <title>SiteMarks | Mark websites for later.</title>
+  <meta charset="utf-8">
+  <title>SiteMarks | Bookmarks are for books.</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alex Crist">
+  <meta name="keywords" content="bookmarks, links, tab organization">
+  <meta name="description" content="Keep your links organized with a familiar tree directory and table view.">
+  <meta name="robots" content="all">
+  <meta name="copyright" content="Alex Crist">
+  <meta property="og:title" content="SiteMarks | Bookmarks are for books.">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="https://alex-crist.com/sitemarks">
+  <meta property="og:image" content="<?php echo base_url(); ?>images/logos/logo-icon.svg">
 
-    <?php 
-    include ($_SERVER['DOCUMENT_ROOT'] . '/sitemarks/styles/STYLES.php'); 
-    ?>
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.png" />
+  <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
 
 </head>  
 <body>  
@@ -29,8 +29,8 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/sitemarks/vars.php');
 
     <header>
 
-      <a href="<?php echo $GLOBALS['site-index'] . "browse";?>">
-        <img src="<?php echo $GLOBALS['site'] . "images/logos/logo-full-transparent.png";?>" />
+      <a href="<?php echo base_url(); ?>index.php/browse/1">
+        <img src="<?php echo base_url(); ?>images/logos/logo-full-transparent.png" />
       </a>
       <a class="by-line" href="https://alex-crist.com" target="_blank">By Alex Crist</a>
 
