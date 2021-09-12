@@ -26,18 +26,8 @@
 </div>
 
 <div class="scroll-container">
-    
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript">
-    function toggle(source) {
-      checkboxes = document.getElementsByTagName('input');
-      for(var i=0, n=checkboxes.length;i<n;i++) {
-        checkboxes[i].checked = source.checked;
-      }
-    }
-    </script>
 
-    <label for="toggle-all" class="toggle">TOGGLE ALL</label><input type="checkbox" id="toggle-all" onClick="toggle(this)" />
+    <label id="toggleBtn" for="toggle-all" class="toggle">Collapse</label><input type="checkbox" id="toggle-all" onClick="toggle(this)" checked /> 
 
     <?php 
     // initialize left value

@@ -46,12 +46,10 @@ class Browse extends CI_Controller {
         $this->load->view('templates/left-panel-1', $data); // quick list
             $this->load->view('browse/group-tree', $data);
         //$this->load->view('templates/left-panel-2', $data); // group tree
-        $this->load->view('templates/right-panel-1', $data); // breadcrumb
-        $this->load->view('templates/right-panel-2', $data); // suggest link
-        $this->load->view('templates/right-panel-3', $data); // easy entry form
+        $this->load->view('templates/right-panel-1', $data);
             $this->load->view('browse/breadcrumb', $data);
             $this->load->view('browse/easy-entry-forms', $data);
-        $this->load->view('templates/right-panel-4', $data); // results table
+        $this->load->view('templates/right-panel-2', $data);
             if ( ! empty($data['get_webmarks_result']))
             {
                 $this->load->view('browse/results-table', $data);
