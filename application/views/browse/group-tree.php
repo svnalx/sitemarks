@@ -1,6 +1,6 @@
 <div class="group-tree-header-container">
 
-    <h1 class="groups-heading">Groups</h1>
+    <p class="groups-heading">Add a new group to the current group.</span></p>
 
     <form 
     class="gt-create-group-form" 
@@ -10,19 +10,21 @@
 
         <input type="hidden" name="mode" value="BROWSE" />
         <input type="hidden" name="static" value="true" />
-        
-        <input 
-        type="submit" 
-        class="gt-create-group-button" 
-        name="add-group" 
-        value="Create">
 
         <input 
         class="gt-create-group-name" 
         type="text" 
         name="new-group-name">
+        
+        <input 
+        type="submit" 
+        class="gt-create-group-button" 
+        name="add-group" 
+        value="Add">
 
     </form>
+
+    
 </div>
 
 <div class="scroll-container">

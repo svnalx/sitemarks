@@ -204,11 +204,12 @@ header {
 	justify-content: flex-start;
 	background-color: var(--black);
 	margin: 0 auto;
-	width: 100vw;
+	width: 100%;
 	height: 60px;
 	padding: 0;
 }
 header .by-line {
+	display: none;
 	font-size: 12px;
 	color: var(--primary-color);
 	font-weight: 600;
@@ -287,10 +288,9 @@ li input {
 	-webkit-justify-content: flex-start;
 	-webkit-justify-content: flex-start;
 	-webkit-align-items: flex-start;
-	flex: 0 0 100vw;
+	flex: 0 0 100%;
 	background-color: var(--black);
-	width: 100vw;
-	height: calc(100vh - 60px);
+	height: calc(100vh - 160px);
 }
 .left-panels {
 	display: flex;
@@ -336,15 +336,13 @@ li input {
 	width: 74vw;
 	justify-content: flex-end;
 	align-items: flex-end;
-	padding: 5px 25px 5px 25px;
+	padding: 0;
 	background-color: #c5cade;
 	background-color: var(--black);
 }
 .right-panel-2 {
 	flex: 1;
-	border-top: solid 2px #4d4e53;
-	min-height: 4200px;
-	padding: 0 10px;
+	padding: 0;
 	overflow-y: scroll;
 }
 .breadcrumb-container {
@@ -352,19 +350,10 @@ li input {
 }
 .breadcrumb-text {
 	display: inline-block;
-	color: #aba5b5;
-	color: #bac0de;
-	color: #e1e4f1;
-	font-style: bold;
-	font-size: 1.2em;
-	background-color: #40424d;
-	background-color: var(--black);
-	text-align: center;
-	padding: 3px 5px;
-	border-radius: 3px;
-}
-a#random-link {
-	color: darkorange;
+	color: var(--white);
+	font-weight: 600;
+	font-size: 1.2rem;
+	padding-top: 14px;
 }
 
 /* FOOTER */
@@ -432,7 +421,6 @@ footer {
 }
 .search-submit-button {
 	font-size: 0.9em;
-	background-color: #aba5b5;
 	background-color: #b8cddf;
 	border-right: 2px solid #485d75;
 	border-bottom: 3px solid #485d75;
@@ -442,9 +430,9 @@ footer {
 .scroll-container {
 	background-color: var(--black);
 	height: calc(100vh - 160px);
-	width: 260px;
-	overflow-y: scroll;
-	overflow-x: auto;
+	min-width: 260px;
+	overflow-y: auto;
+	overflow-x: hidden;
 	margin: 0 auto;
 	padding: 5px;
 }
@@ -455,35 +443,43 @@ footer {
 /* GROUP TREE */
 .group-tree-header-container {
 	display: flex;
+	flex-flow: column wrap;
 	padding: 7px 3px 0 3px;
 	margin-bottom: 8px;
 }
 .groups-heading {
-	flex: 1;
-	color: #e6f2ff;
+	flex: 1 0 100%;
 	color: var(--white);
-	margin-top: -5px;
+	font-size: 12px;
+	padding-bottom: 12px;
 }
 .gt-create-group-form {
-	flex: 3;
+	flex: 1 0 100%;
+	display: flex;
+	flex-flow: row nowrap;
 }
 .gt-create-group-name {
 	border-radius: 3px;
-	background-color: #f7fbff;
-	border: 1px solid #aba5b5;
-	width: 145px;
-	height: 18px;
+	background-color: var(--white);
+	border: 1px solid var(--light-gray);
+	width: 80%;
+	height: 22px;
 	margin: 0 5px 7px 0;
-	float: right;
+	flex: 1 0 80%;
 }
 .gt-create-group-button {
-	background-color: #d1d1e0;
-	border: 1px solid #aba5b5;
-	border-radius: 3px;
-	padding: 0 3px;
-	height: 18px;
-	float: right;
-	font-size: 0.9em;
+	background-color: var(--primary-color);
+	color: var(--black);
+	border: 2px solid var(--black);
+	border-radius: 0 3px 3px 0;
+	padding: 3px;
+	height: 28px;
+	font-size: 0.8em;
+	font-weight: 600;
+	flex: 1 0 21%;
+	position: relative;
+	left: -10px;
+	top: -2px;
 }
 .icon-folder {
 	height: 14px;
@@ -508,28 +504,24 @@ li a {
 #groupTree {
 	display: inline-block;
 	padding: 20px 0 0 0;
-	width: 275px;
+	width: 200px;
 	height: auto;
 	margin: 0;
 }
 #groupTree > ol > li > label > a {
-	font-weight: 800;
-}
-#groupTree > ol > li > ol > li > label > a {
 	font-weight: 600;
 }
+#groupTree > ol > li > ol > li > label > a {
+	font-weight: 400;
+}
 label.toggle {
-	font-size: 0.7em;
-	background-color: #aba5b5;
-	background-color: #b8cddf;
-	border-right: 2px solid #485d75;
-	border-bottom: 3px solid #485d75;
-	color: #485d75;
-	padding: 2px 4px;
-	font-weight: 900;
-	position: relative;
-	top: 5px;
-	left: 2px;
+	font-size: 0.8em;
+	color: var(--black);
+	background-color: var(--secondary-color);
+	border: 0;
+	padding: 3px;
+	font-weight: 600;
+	float: right;
 }
 input#toggle-all {
 	position: absolute;
@@ -562,6 +554,7 @@ input#toggle-all {
 	position: relative;
 	padding-left: 0;
 	list-style: none;
+	width: 100%;
 }
 #groupTree .active-group {
 	color: #f7fbff;
@@ -596,6 +589,7 @@ input#toggle-all {
 	cursor: pointer;
 	display: block;
 	padding-left: 0;
+	width: 100%;
 }
 #groupTree li input:checked + ol {
 	margin: 0;
@@ -617,11 +611,9 @@ input#toggle-all {
 	table-layout: fixed;
 	border-collapse: separate;
 	border-spacing: 0px 1px;
-	border-bottom: 3px solid #4d4e53;
-	border-left: 1px solid #4d4e53;
-	border-right: 3px solid #4d4e53;
+	border: 0;
 	width: 73vw;
-	margin: 15px auto;
+	margin-top: 7px;
 	overflow-y: scroll;
 }
 #results td {
