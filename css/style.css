@@ -135,12 +135,12 @@ table {
 	--primary-color-lightest: #cbf7f3;
 	--secondary-color: #f50057;
 	--secondary-color-rgb: 245, 0, 87;
-	--black: #050a0a;
-	--black-rgb: 5, 10, 10;
+	--black: #1a1e1f;
+	--black-rgb: 26, 30, 31;
 	--white: #fafcfc;
 	--white-rgb: 250, 252, 252;
-	--medium-gray: ;
-	--light-gray: ;
+	--medium-gray: #8c8c8c;
+	--light-gray: #c6c6c6;
 }
 html {
 	font-size: 16px;
@@ -485,9 +485,11 @@ footer {
 	float: right;
 	font-size: 0.9em;
 }
-.folder-icon {
-	height: 10px;
-	width: 10px;
+.icon-folder {
+	height: 14px;
+	width: 14px;
+	display: inline;
+	padding-right: 3px;
 }
 ol.tree {
 	display: inline-block;
@@ -502,13 +504,19 @@ li a {
 	color: darkblue;
 }
 
-/* Tree menu styles */
-ol.gt-ol {
+/* Group tree */
+#groupTree {
 	display: inline-block;
-	padding: 0;
+	padding: 20px 0 0 0;
 	width: 275px;
 	height: auto;
-	margin: 15px 0 0 -35px;
+	margin: 0;
+}
+#groupTree > ol > li > label > a {
+	font-weight: 800;
+}
+#groupTree > ol > li > ol > li > label > a {
+	font-weight: 600;
 }
 label.toggle {
 	font-size: 0.7em;
@@ -535,8 +543,8 @@ input#toggle-all {
 	width: 1em;
 	top: 0;
 }
-label > a {
-	display: inline-block;
+#groupTree label > a {
+	display: inline;
 	width: 100%;
 	color: #485d75;
 	color: var(--white);
@@ -544,26 +552,25 @@ label > a {
 	font-size: 16px;
 	line-height: 20px;
 }
-label > a:hover {
+#groupTree label > a:hover {
 	background-color: #b8cddf;
 	background-color: var(--white);
 	color: #485d75;
 	color: var(--black);
 }
-li {
+#groupTree li {
 	position: relative;
-	margin-left: -15px;
-	margin-left: 18px;
+	padding-left: 0;
 	list-style: none;
 }
-.active-group {
+#groupTree .active-group {
 	color: #f7fbff;
 	color: var(--white);
 	background-color: #1884df;
 	background-color: var(--secondary-color);
 	font-weight: 400;
 }
-li input {
+#groupTree li input {
 	position: absolute;
 	left: 0;
 	margin-left: 0;
@@ -575,44 +582,32 @@ li input {
 	width: 1em;
 	top: 0;
 }
-li input + ol {
-	margin: -0.938em 0 0 -44px;
+#groupTree li input + ol {
+	margin: 0;
 	height: 1em;
 }
-li input + ol.end-of-line {
-	background-image: none;
-	margin: -0.938em 0 0 -44px;
-	height: 1em;
-}
-li input + ol > li {
+#groupTree li input ~ ol > li {
 	display: none;
-	margin-left: -14px !important;
-	padding-left: 1px;
 }
-li label {
+#groupTree li ol > li {
+	padding-left: 20px;
+}
+#groupTree li label {
 	cursor: pointer;
 	display: block;
-	padding-left: 37px;
+	padding-left: 0;
 }
-li label.end-of-line {
-	background: none;
-	padding-left: 21px;
-}
-li input:checked + ol {
-	margin: -1.4em 0 0 -44px;
-	padding: 1.563em 0 0 60px;
+#groupTree li input:checked + ol {
+	margin: 0;
+	padding: 0;
 	height: auto;
 }
-li input:checked + ol > li {
+#groupTree li input:checked ~ ol > li {
 	display: block;
-	margin: 0 0 0.125em;
+	margin: 0;
 }
-li input:checked + ol > li:last-child {
-	margin: 0 0 0.063em;
-}
-li input:not(:checked) + ol {
-	display: none;
-	border: 2px dotted red;
+#groupTree li input:checked + ol > li:last-child {
+	margin: 0;
 }
 
 /* RESULTS TABLE */

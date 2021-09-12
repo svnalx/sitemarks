@@ -16,13 +16,9 @@ function toggle(e) {
 	let toggleBtn = document.getElementById("toggleBtn");
 	let checkboxes = document.getElementsByTagName("input");
 
-	//console.log(e.checked);
-	//console.log(e);
-	//console.log(checkboxes);
-
 	for (var i = 0, n = checkboxes.length; i < n; i++) {
 		// sets checked value to the same as the checked value of the toggle button
-
+		// hide/show is done through CSS
 		checkboxes[i].checked = e.checked;
 	}
 

@@ -31,7 +31,7 @@
 
     <?php 
     // initialize left value
-    $l_pos = 2;
+    $l_pos = 1;
     ?>
     
     <?php 
@@ -56,7 +56,9 @@
     
     endforeach;
     
-    $output = $this->Tree_model->build_tree($group_tree_array, $url_info, $gid);
+    $output = "<div id=\"groupTree\">";
+    $output .= $this->Tree_model->build_tree($group_tree_array, $url_info, $gid);
+    $output .= "</div>";
     echo $output;
     ?>
 

@@ -105,7 +105,7 @@ class Browse_model extends CI_Model {
         
         $sql1 =
         "SELECT g_right 
-        FROM groups
+        FROM `groups`
         WHERE g_name = ?;";
 
         $query1 = $this->db->query($sql1, $parentInfo['g_name']);
@@ -113,17 +113,17 @@ class Browse_model extends CI_Model {
         $myRight = $result1[0]['g_right'];
         
         $sql2 =
-        "UPDATE groups 
+        "UPDATE `groups`
         SET g_right = g_right + 2 
         WHERE g_right >= '".$myRight."';";
         
         $sql3 =
-        "UPDATE groups 
+        "UPDATE `groups` 
         SET g_left = g_left + 2 
         WHERE g_left >= '".$myRight."';";
 
         $sql4 = 
-        "INSERT INTO groups
+        "INSERT INTO `groups`
         (
             g_name, 
             g_left, 
