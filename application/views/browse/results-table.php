@@ -30,7 +30,7 @@
         </td>
         
 <!-- LABEL -->
-        <td style="text-align:center;"> 
+        <td style="text-align:center;vertical-align:middle;"> 
             <span class="groupDisplay">
                 <?php echo $webmark['g_name'];?>
             </span>

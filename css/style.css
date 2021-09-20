@@ -292,17 +292,11 @@ li input {
 /* BODY */
 .main {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: row wrap;
 	justify-content: flex-start;
-	align-self: flex-start;
 	align-items: flex-start;
-	-webkit-align-self: flex-start;
-	-webkit-justify-content: flex-start;
-	-webkit-justify-content: flex-start;
-	-webkit-align-items: flex-start;
 	flex: 0 0 100%;
 	background-color: var(--black);
-	height: calc(100vh - 400px);
 }
 .left-panels {
 	display: flex;
@@ -330,10 +324,9 @@ li input {
 	max-width: 74vw;
 	margin-right: 4vw;
 	display: flex;
-	-webkit-justify-content: flex-start;
 	justify-content: flex-start;
-	flex-flow: column nowrap;
-	min-height: 50vh;
+	align-items: flex-start;
+	flex-flow: row wrap;
 	max-height: calc(100vh - 140px);
 	background-color: var(--black);
 }
@@ -352,26 +345,33 @@ li input {
 	padding: 0;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	height: calc(100vh - 165px);
 }
 .breadcrumb-container {
 	flex: 1;
 }
 .breadcrumb-text {
 	display: inline-block;
-	color: var(--secondary-color);
-	font-weight: 600;
-	font-size: 1.2rem;
-	padding-top: 14px;
+	color: var(--white);
+	border-top: 2px solid var(--primary-color);
+	border-right: 2px solid var(--secondary-color);
+	border-bottom: 2px solid var(--secondary-color);
+	border-left: 2px solid var(--primary-color);
+	font-weight: 800;
+	font-size: 1rem;
+	padding: 6px 18px;
+	text-transform: uppercase;
 }
 
 /* FOOTER */
 footer {
-	flex: 1;
-	height: 30px;
+	height: 2vh;
+	text-align: center;
+	padding-top: 4vh;
 }
 footer p {
+	display: inline;
 	font-size: 11px;
-	text-align: center;
 	color: var(--white);
 }
 
@@ -537,11 +537,11 @@ li a {
 }
 label.toggle {
 	font-size: 0.8em;
-	color: var(--black);
-	background-color: var(--secondary-color);
+	color: var(--secondary-color);
 	border: 0;
 	padding: 3px;
-	font-weight: 600;
+	font-weight: 400;
+	font-size: 0.8rem;
 	float: right;
 }
 input#toggle-all {
@@ -634,6 +634,7 @@ input#toggle-all {
 	border-spacing: 0px 1px;
 	border: 0;
 	overflow-y: scroll;
+	width: 74vw;
 }
 #results td {
 	font-size: 0.92em;
@@ -770,8 +771,7 @@ span.groupDisplay {
 	font-size: 0.95em;
 	font-weight: 500;
 	color: #f2f8ff;
-	background-color: #4d4e53;
-	border: 0px solid #95969c;
+	background-color: var(--black);
 	border-radius: 25px;
 	padding: 0 10px;
 	opacity: 1;
