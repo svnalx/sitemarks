@@ -1,19 +1,14 @@
-<div class="ee-form-field">
-    <!--<h2 class="ee-heading">Quick Add</h2>-->
+<form 
+class="ee-form" 
+action="<?php echo $GLOBALS['site-index'] . "add/" . $gid;?>"  
+method="post" 
+autocomplete="off">
 
-    <form 
-    class="ee-form-link" 
-    action="<?php echo $GLOBALS['site-index'] . "add/" . $gid;?>"  
-    method="post" 
-    autocomplete="off">
+  <input type="hidden" name="mode" value="BROWSE" />
+  <input type="hidden" name="static" value="true" />
 
-        <label>Quick add: </label>
-        <input class="ee-url" type="text" name="ee-url">
+  <label for="ee-url">Add new sitemark to current group: </label>
+  <input type="text" name="ee-url">
+  <input type="submit" name="addlink" value="Add sitemark">   
 
-
-        <input type="hidden" name="mode" value="BROWSE" />
-        <input type="hidden" name="static" value="true" />
-
-        <input type="submit" class="ee-link-submit" name="addlink" value="Add">          
-    </form>
-</div>
+</form>

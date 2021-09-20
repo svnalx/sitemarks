@@ -20,7 +20,7 @@
         type="submit" 
         class="gt-create-group-button" 
         name="add-group" 
-        value="Add">
+        value="Add group">
 
     </form>
 
